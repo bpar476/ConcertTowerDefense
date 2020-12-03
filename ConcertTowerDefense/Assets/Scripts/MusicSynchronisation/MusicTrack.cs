@@ -25,4 +25,6 @@ public class MusicTrack : ScriptableObject
     /// note positions for this track
     /// </summary>
     public float[] BeatMap { get { return (float[])beatMap.Clone(); } }
+
+    public AudioClip Track { get { return track; } }
 }

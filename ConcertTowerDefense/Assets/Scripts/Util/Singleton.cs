@@ -15,9 +15,17 @@ public abstract class Singleton<T> : MonoBehaviour
         else
         {
             instance = Init();
-            DontDestroyOnLoad(this);
+            if (ShouldNotDestroyOnLoad())
+            {
+                DontDestroyOnLoad(this);
+            }
         }
     }
 
     protected abstract T Init();
+
+    protected virtual bool ShouldNotDestroyOnLoad()
+    {
+        return true;
+    }
 }

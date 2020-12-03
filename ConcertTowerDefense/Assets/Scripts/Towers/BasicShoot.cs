@@ -1,23 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BasicShoot : MonoBehaviour
 {
+    [SerializeField]
+    private TrackManager manager;
+
     [SerializeField]
     private GameObject projectilePrefab;
 
     [SerializeField]
     private float projectileSpeed = 5f;
 
+
     private void Start()
     {
-        BeatManager.Instance.OnEigth += Shoot;
+        manager.OnBeat += Shoot;
     }
 
     private void OnDestroy()
     {
-        BeatManager.Instance.OnEigth -= Shoot;
+        manager.OnBeat -= Shoot;
     }
 
     public void Shoot()

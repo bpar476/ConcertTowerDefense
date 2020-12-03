@@ -57,5 +57,7 @@ public class TrackPlayer : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+        outSource.volume = 0;
+        inSource.volume = originVolume;
     }
 }

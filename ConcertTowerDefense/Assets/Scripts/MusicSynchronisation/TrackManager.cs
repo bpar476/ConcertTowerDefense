@@ -4,9 +4,6 @@ using UnityEngine;
 public class TrackManager : MonoBehaviour
 {
 
-    [SerializeField]
-    private MusicTrack track;
-
     private float[] beatMap;
 
     private BeatSynchroniser conductor;
@@ -20,7 +17,24 @@ public class TrackManager : MonoBehaviour
     private void Start()
     {
         conductor = BeatSynchroniser.Instance;
-        beatMap = track.BeatMap;
+    }
+
+    /// <summary>
+    /// Smoothly transitions to a new beatmap
+    /// </summary>
+    /// <param name="newBeatMap">The new beatmap</param>
+    public void ChangeBeatMap(float[] newBeatMap)
+    {
+        beatMap = newBeatMap;
+        if (conductor == null)
+        {
+            // This case only happens when called from Start() of another component that is Started before this component
+            currentBeatIndex = 0;
+        }
+        else
+        {
+            currentBeatIndex = Array.FindIndex(beatMap, beat => beat >= conductor.LoopBeatProgress);
+        }
     }
 
     private void Update()

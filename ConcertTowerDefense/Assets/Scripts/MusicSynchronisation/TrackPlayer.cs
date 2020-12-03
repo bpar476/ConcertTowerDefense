@@ -6,6 +6,9 @@ public class TrackPlayer : MonoBehaviour
     [SerializeField]
     private MusicTrack[] bassTracks;
 
+    [SerializeField]
+    private TrackManager bassTrackManager;
+
     private AudioSource[] bassSources;
     private int currentTrackIndex = 0;
 
@@ -32,6 +35,11 @@ public class TrackPlayer : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        bassTrackManager.ChangeBeatMap(bassTracks[currentTrackIndex].BeatMap);
+    }
+
     public void CrossFadeToTrackLevel(int level)
     {
         if (level > bassTracks.Length)
@@ -43,6 +51,7 @@ public class TrackPlayer : MonoBehaviour
         var newTrackIndex = level - 1;
         StartCoroutine(CrossFadeTracks(currentTrackIndex, newTrackIndex));
         currentTrackIndex = newTrackIndex;
+        bassTrackManager.ChangeBeatMap(bassTracks[currentTrackIndex].BeatMap);
     }
 
     private IEnumerator CrossFadeTracks(int outIndex, int inIndex)

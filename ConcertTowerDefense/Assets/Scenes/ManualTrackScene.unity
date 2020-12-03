@@ -253,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2c5e25b11b3b548822a922c18883f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  track: {fileID: 11400000, guid: 22691c2456cba0642833579fbc1d68ce, type: 2}
 --- !u!4 &302094653
 Transform:
   m_ObjectHideFlags: 0
@@ -304,7 +303,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: 208}
+  m_AnchoredPosition: {x: 65, y: 208}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457459813
@@ -1296,6 +1295,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 22691c2456cba0642833579fbc1d68ce, type: 2}
   - {fileID: 11400000, guid: b2049f998fea45045bf5c885d275b352, type: 2}
   - {fileID: 11400000, guid: 80a77f672a7e68b499f018bf3ad674a5, type: 2}
+  bassTrackManager: {fileID: 302094652}
 --- !u!4 &1778270429
 Transform:
   m_ObjectHideFlags: 0

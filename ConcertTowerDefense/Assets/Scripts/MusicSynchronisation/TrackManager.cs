@@ -34,6 +34,8 @@ public class TrackManager : MonoBehaviour
         else
         {
             currentBeatIndex = Array.FindIndex(beatMap, beat => beat >= conductor.LoopBeatProgress);
+
+            currentBeatIndex = Mathf.Max(Array.FindIndex(beatMap, beat => beat >= conductor.LoopBeatProgress), 0);
         }
     }
 

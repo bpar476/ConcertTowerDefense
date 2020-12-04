@@ -10,7 +10,7 @@ public class TrackManager : MonoBehaviour
 
     private int currentBeatIndex = 0;
 
-    private bool waitingForNextLoop = false;
+    private bool outOfNotes = false;
 
     public Action OnBeat;
 
@@ -33,27 +33,27 @@ public class TrackManager : MonoBehaviour
         }
         else
         {
-            currentBeatIndex = Array.FindIndex(beatMap, beat => beat >= conductor.LoopBeatProgress);
 
             currentBeatIndex = Mathf.Max(Array.FindIndex(beatMap, beat => beat >= conductor.LoopBeatProgress), 0);
         }
+        outOfNotes = false;
     }
 
     private void Update()
     {
         if (conductor.CompletedLoop)
         {
-            waitingForNextLoop = false;
+            outOfNotes = false;
         }
 
-        if (conductor.LoopBeatProgress >= beatMap[currentBeatIndex] && !waitingForNextLoop)
+        if (conductor.LoopBeatProgress >= beatMap[currentBeatIndex] && !outOfNotes)
         {
             OnBeat?.Invoke();
             currentBeatIndex++;
 
             if (currentBeatIndex == beatMap.Length)
             {
-                waitingForNextLoop = true;
+                outOfNotes = true;
                 currentBeatIndex = 0;
             }
         }

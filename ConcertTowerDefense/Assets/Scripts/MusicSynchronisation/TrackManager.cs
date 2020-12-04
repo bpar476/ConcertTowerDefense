@@ -41,6 +41,11 @@ public class TrackManager : MonoBehaviour
 
     private void Update()
     {
+        if (conductor.LoopBeatProgress > beatMap[beatMap.Length - 1] && currentBeatIndex == 0)
+        {
+            outOfNotes = true;
+        }
+
         if (conductor.CompletedLoop)
         {
             outOfNotes = false;

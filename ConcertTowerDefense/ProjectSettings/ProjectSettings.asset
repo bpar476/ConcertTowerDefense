@@ -127,7 +127,10 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 8300000, guid: 9aaae5d6178c71347bf1c3aad4f6fe81, type: 3}
+  - {fileID: 8300000, guid: 6a83486411cf6664da22e8ae6782f2c3, type: 3}
+  - {fileID: 8300000, guid: edf71ab4ad0237848b4083aa8da43c72, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -544,7 +547,7 @@ PlayerSettings:
   webGLTemplate: APPLICATION:Default
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 0
+  webGLCompressionFormat: 1
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0

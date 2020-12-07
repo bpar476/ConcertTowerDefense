@@ -63,11 +63,13 @@ public class TowerPlacer : MonoBehaviour
             {
                 currentCell.Highlight(Color.yellow);
 
-                if (Input.GetMouseButtonDown(0))
+                // TODO look up cost of tower depending on tower type Magic number 5 should be replaced with value from tower type
+                if (Input.GetMouseButtonDown(0) && TowerCurrency.Instance.Currency >= 5)
                 {
                     currentTower.transform.position = currentCell.Center;
                     currentTowerRenderer.color = originalColor;
                     currentCell.UnHighlight();
+                    TowerCurrency.Instance.ConsumeCurrency(5);
 
                     // TODO fire event for listeners that tower of type has been created
                     state = Mode.EMPTY;
@@ -89,7 +91,8 @@ public class TowerPlacer : MonoBehaviour
 
     public void GrabTower(GameObject tower)
     {
-        if (state == Mode.EMPTY)
+        // TODO look up cost of tower depending on tower type Magic number 5 should be replaced with value from tower type
+        if (state == Mode.EMPTY && TowerCurrency.Instance.Currency >= 5)
         {
             currentTower = Instantiate(tower, MousePositionToGameWorldPosition(), Quaternion.identity);
             currentTowerRenderer = currentTower.GetComponent<SpriteRenderer>();

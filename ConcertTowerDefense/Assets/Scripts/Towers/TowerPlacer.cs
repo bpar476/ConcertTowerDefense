@@ -21,6 +21,7 @@ public class TowerPlacer : MonoBehaviour
 
     private Camera mainCam;
     private GameObject currentTower;
+    private SpriteRenderer currentTowerRenderer;
     private Color originalColor;
 
     private Mode state;
@@ -42,9 +43,14 @@ public class TowerPlacer : MonoBehaviour
 
             foreach (var cell in stage.Layout)
             {
-                if (currentPos.x >= cell.bottomLeft.x && currentPos.x <= cell.topRight.x && currentPos.y >= cell.bottomLeft.y && currentPos.y <= cell.topRight.y)
+                if (currentPos.x >= cell.BottomLeft.x && currentPos.x <= cell.TopRight.x && currentPos.y >= cell.BottomLeft.y && currentPos.y <= cell.TopRight.y)
                 {
-                    currentTower.GetComponent<SpriteRenderer>().color = originalColor * legalPlacementTint;
+                    if (currentCell != null)
+                    {
+                        currentCell.UnHighlight();
+                    }
+
+                    currentTowerRenderer.color = originalColor * legalPlacementTint;
                     currentCell = cell;
                     hoveringValidCell = true;
                     break;
@@ -55,13 +61,28 @@ public class TowerPlacer : MonoBehaviour
 
             if (hoveringValidCell)
             {
-                // TODO cache renderer
-                currentTower.GetComponent<SpriteRenderer>().color = originalColor * legalPlacementTint;
+                currentCell.Highlight(Color.yellow);
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    currentTower.transform.position = currentCell.Center;
+                    currentTowerRenderer.color = originalColor;
+                    currentCell.UnHighlight();
+
+                    // TODO fire event for listeners that tower of type has been created
+                    state = Mode.EMPTY;
+                    currentCell = null;
+                    currentTower = null;
+                    currentTowerRenderer = null;
+                }
+                else
+                {
+                    currentTowerRenderer.color = originalColor * legalPlacementTint;
+                }
             }
             else
             {
-                currentTower.GetComponent<SpriteRenderer>().color = originalColor * illegalPlacementTint;
-
+                currentTowerRenderer.color = originalColor * illegalPlacementTint;
             }
         }
     }
@@ -71,18 +92,10 @@ public class TowerPlacer : MonoBehaviour
         if (state == Mode.EMPTY)
         {
             currentTower = Instantiate(tower, MousePositionToGameWorldPosition(), Quaternion.identity);
-            var renderer = currentTower.GetComponent<SpriteRenderer>();
-            originalColor = renderer.color;
-            renderer.color = originalColor * illegalPlacementTint;
+            currentTowerRenderer = currentTower.GetComponent<SpriteRenderer>();
+            originalColor = currentTowerRenderer.color;
+            currentTowerRenderer.color = originalColor * illegalPlacementTint;
             state = Mode.HOLDING;
-        }
-    }
-
-    public void DropTower()
-    {
-        if (state == Mode.HOLDING)
-        {
-
         }
     }
 

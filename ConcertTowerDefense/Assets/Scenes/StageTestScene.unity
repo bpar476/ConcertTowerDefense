@@ -1979,7 +1979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   legalPlacementTint: {r: 0.12799574, g: 1, b: 0.07075471, a: 1}
-  illegalPlacementTint: {r: 1, g: 1, b: 1, a: 0.5019608}
+  illegalPlacementTint: {r: 1, g: 0.3160377, b: 0.3160377, a: 0.5019608}
   stage: {fileID: 1724420763}
 --- !u!4 &1966787504
 Transform:

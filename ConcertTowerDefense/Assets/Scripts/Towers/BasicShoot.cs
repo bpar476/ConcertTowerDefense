@@ -11,15 +11,26 @@ public class BasicShoot : MonoBehaviour
     [SerializeField]
     private float projectileSpeed = 5f;
 
-
     private void Start()
     {
-        manager.OnBeat += Shoot;
+        if (manager != null)
+        {
+            RegisterOnBeatCallback(manager);
+        }
     }
 
     private void OnDestroy()
     {
-        manager.OnBeat -= Shoot;
+        if (manager != null)
+        {
+            manager.OnBeat -= Shoot;
+        }
+    }
+
+    public void RegisterOnBeatCallback(TrackManager manager)
+    {
+        this.manager = manager;
+        manager.OnBeat += Shoot;
     }
 
     public void Shoot()

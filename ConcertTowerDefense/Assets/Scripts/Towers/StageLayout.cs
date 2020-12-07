@@ -27,25 +27,60 @@ public class StageLayout : MonoBehaviour
         {
             if (cachedLayout == null)
             {
-                cachedLayout = towerLocations.Select(obj =>
-             {
-                 var x = obj.transform.position.x;
-                 var y = obj.transform.position.y;
-                 var cell = new Cell();
-                 cell.bottomLeft = new Vector2(x - cellRadius, y - cellRadius);
-                 cell.topRight = new Vector2(x + cellRadius, y + cellRadius);
-                 return cell;
-             }).ToArray();
+                cachedLayout = towerLocations.Select(obj => new Cell(obj, cellRadius)).ToArray();
             }
 
             return cachedLayout;
         }
     }
 
-    public struct Cell
+    public class Cell
     {
-        public Vector2 bottomLeft;
-        public Vector3 topRight;
+        public Vector2 BottomLeft
+        {
+            get
+            {
+                return new Vector2(position.x - radius, position.y - radius);
+            }
+        }
+        public Vector2 TopRight
+        {
+            get
+            {
+                return new Vector2(position.x + radius, position.y + radius);
+            }
+        }
+
+        public Vector2 Center
+        {
+            get
+            {
+                return position;
+            }
+        }
+
+        private Vector2 position;
+        private float radius;
+        private SpriteRenderer renderer;
+        private Color originalColor;
+
+        public Cell(GameObject cell, float radius)
+        {
+            this.renderer = cell.GetComponent<SpriteRenderer>();
+            this.position = cell.transform.position;
+            this.radius = radius;
+            this.originalColor = this.renderer.color;
+        }
+
+        public void Highlight(Color tint)
+        {
+            renderer.color = originalColor * tint;
+        }
+
+        public void UnHighlight()
+        {
+            renderer.color = originalColor;
+        }
     }
 
     private void OnDrawGizmos()
@@ -53,8 +88,7 @@ public class StageLayout : MonoBehaviour
         Gizmos.color = Color.red;
         foreach (var cell in Layout)
         {
-            var center = new Vector3(cell.bottomLeft.x + cellRadius, cell.bottomLeft.y + cellRadius);
-            Gizmos.DrawWireCube(center, new Vector3(cellRadius * 2, cellRadius * 2, 0));
+            Gizmos.DrawWireCube(cell.Center, new Vector3(cellRadius * 2, cellRadius * 2, 0));
         }
     }
 }

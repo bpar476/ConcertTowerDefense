@@ -26,7 +26,7 @@ public class TowerPlacer : MonoBehaviour
 
     private Mode state;
     private bool hoveringValidCell = false;
-    private StageLayout.Cell currentCell;
+    private StageCell currentCell;
 
     private void Awake()
     {

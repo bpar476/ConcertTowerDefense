@@ -3,7 +3,7 @@
 public class BasicShoot : MonoBehaviour
 {
     [SerializeField]
-    private TrackManager manager;
+    private BeatMapper manager;
 
     [SerializeField]
     private GameObject projectilePrefab;
@@ -27,7 +27,7 @@ public class BasicShoot : MonoBehaviour
         }
     }
 
-    public void RegisterOnBeatCallback(TrackManager manager)
+    public void RegisterOnBeatCallback(BeatMapper manager)
     {
         this.manager = manager;
         manager.OnBeat += Shoot;

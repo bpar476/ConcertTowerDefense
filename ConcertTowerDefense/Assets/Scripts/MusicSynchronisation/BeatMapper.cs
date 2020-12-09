@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class TrackManager : MonoBehaviour
+public class BeatMapper : MonoBehaviour
 {
 
     private float[] beatMap;

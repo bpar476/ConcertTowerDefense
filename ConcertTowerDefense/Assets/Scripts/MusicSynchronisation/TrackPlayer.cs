@@ -7,7 +7,7 @@ public class TrackPlayer : MonoBehaviour
     private MusicTrack[] bassTracks;
 
     [SerializeField]
-    private TrackManager bassTrackManager;
+    private BeatMapper bassTrackManager;
 
     private AudioSource[] bassSources;
     private int currentTrackIndex = 0;

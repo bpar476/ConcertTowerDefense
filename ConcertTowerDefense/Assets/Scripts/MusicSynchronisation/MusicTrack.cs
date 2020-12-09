@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 // TODO: Make it so that the track is played from this as well.
-[CreateAssetMenu(fileName = "Track", menuName = "Track and Beatmap", order = 51)]
+[CreateAssetMenu(fileName = "Track", menuName = "Track and Beatmap", order = 52)]
 public class MusicTrack : ScriptableObject
 {
     /// <summary>

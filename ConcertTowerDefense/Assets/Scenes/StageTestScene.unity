@@ -858,8 +858,8 @@ MonoBehaviour:
         m_MethodName: GrabTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 5432681359448508721, guid: 66a578466ee3e234ebbf4133e2026f86, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 1cc50f2726c065345b52e6baa27d54c8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: InstrumentArchetype, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

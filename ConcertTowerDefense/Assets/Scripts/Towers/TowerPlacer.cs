@@ -20,6 +20,8 @@ public class TowerPlacer : MonoBehaviour
     private StageLayout stage;
 
     private Camera mainCam;
+
+    private InstrumentArchetype currentTowerArchetype;
     private GameObject currentTower;
     private SpriteRenderer currentTowerRenderer;
     private Color originalColor;
@@ -69,13 +71,14 @@ public class TowerPlacer : MonoBehaviour
                     currentTower.transform.position = currentCell.Center;
                     currentTowerRenderer.color = originalColor;
                     currentCell.UnHighlight();
-                    TowerCurrency.Instance.ConsumeCurrency(5);
+                    TowerCurrency.Instance.ConsumeCurrency(currentTowerArchetype.cost);
 
                     // TODO fire event for listeners that tower of type has been created
                     state = Mode.EMPTY;
                     currentCell = null;
                     currentTower = null;
                     currentTowerRenderer = null;
+                    currentTowerArchetype = null;
                 }
                 else
                 {
@@ -89,12 +92,12 @@ public class TowerPlacer : MonoBehaviour
         }
     }
 
-    public void GrabTower(GameObject tower)
+    public void GrabTower(InstrumentArchetype tower)
     {
-        // TODO look up cost of tower depending on tower type Magic number 5 should be replaced with value from tower type
-        if (state == Mode.EMPTY && TowerCurrency.Instance.Currency >= 5)
+        if (state == Mode.EMPTY && TowerCurrency.Instance.Currency >= tower.cost)
         {
-            currentTower = Instantiate(tower, MousePositionToGameWorldPosition(), Quaternion.identity);
+            currentTowerArchetype = tower;
+            currentTower = Instantiate(currentTowerArchetype.towerPrefab.gameObject, MousePositionToGameWorldPosition(), Quaternion.identity);
             currentTowerRenderer = currentTower.GetComponent<SpriteRenderer>();
             originalColor = currentTowerRenderer.color;
             currentTowerRenderer.color = originalColor * illegalPlacementTint;

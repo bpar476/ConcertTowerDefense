@@ -1,7 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class TowerPlacer : MonoBehaviour
 {
+
+    /// <summary>
+    /// Event callback which will be invoked each time a tower of the given type
+    /// is placed.
+    /// </summary>
+    public Action<InstrumentType, BeatMappedShooter> OnTowerPlaced;
+
     /// <summary>
     /// Color to tint the tower's sprite when it can be placed in its current position
     /// </summary>
@@ -22,7 +30,7 @@ public class TowerPlacer : MonoBehaviour
     private Camera mainCam;
 
     private InstrumentArchetype currentTowerArchetype;
-    private GameObject currentTower;
+    private BeatMappedShooter currentTower;
     private SpriteRenderer currentTowerRenderer;
     private Color originalColor;
 
@@ -65,20 +73,17 @@ public class TowerPlacer : MonoBehaviour
             {
                 currentCell.Highlight(Color.yellow);
 
-                // TODO look up cost of tower depending on tower type Magic number 5 should be replaced with value from tower type
-                if (Input.GetMouseButtonDown(0) && TowerCurrency.Instance.Currency >= 5)
+                if (Input.GetMouseButtonDown(0) && TowerCurrency.Instance.Currency >= currentTowerArchetype.cost)
                 {
                     currentTower.transform.position = currentCell.Center;
                     currentTowerRenderer.color = originalColor;
                     currentCell.UnHighlight();
+
                     TowerCurrency.Instance.ConsumeCurrency(currentTowerArchetype.cost);
 
-                    // TODO fire event for listeners that tower of type has been created
-                    state = Mode.EMPTY;
-                    currentCell = null;
-                    currentTower = null;
-                    currentTowerRenderer = null;
-                    currentTowerArchetype = null;
+                    OnTowerPlaced?.Invoke(currentTowerArchetype.type, currentTower);
+
+                    ResetGrabbedObject();
                 }
                 else
                 {
@@ -97,7 +102,7 @@ public class TowerPlacer : MonoBehaviour
         if (state == Mode.EMPTY && TowerCurrency.Instance.Currency >= tower.cost)
         {
             currentTowerArchetype = tower;
-            currentTower = Instantiate(currentTowerArchetype.towerPrefab.gameObject, MousePositionToGameWorldPosition(), Quaternion.identity);
+            currentTower = Instantiate(currentTowerArchetype.towerPrefab, MousePositionToGameWorldPosition(), Quaternion.identity);
             currentTowerRenderer = currentTower.GetComponent<SpriteRenderer>();
             originalColor = currentTowerRenderer.color;
             currentTowerRenderer.color = originalColor * illegalPlacementTint;
@@ -109,6 +114,15 @@ public class TowerPlacer : MonoBehaviour
     {
         var point = mainCam.ScreenToWorldPoint(Input.mousePosition);
         return new Vector3(point.x, point.y, 0);
+    }
+
+    private void ResetGrabbedObject()
+    {
+        state = Mode.EMPTY;
+        currentCell = null;
+        currentTower = null;
+        currentTowerRenderer = null;
+        currentTowerArchetype = null;
     }
 
     private enum Mode

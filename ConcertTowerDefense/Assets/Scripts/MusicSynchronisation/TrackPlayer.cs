@@ -3,46 +3,28 @@ using System.Collections;
 
 public class TrackPlayer : MonoBehaviour
 {
-    [SerializeField]
-    private MusicTrack[] bassTracks;
+    public BeatMapper Mapper { get { return mapper; } }
 
-    [SerializeField]
-    private BeatMapper bassTrackManager;
+    private MusicTrack[] tracks;
 
-    private AudioSource[] bassSources;
+    private BeatMapper mapper;
+
+    private AudioSource[] sources;
     private int currentTrackIndex = 0;
 
-    private void Awake()
+    public void LoadTracks(MusicTrack[] tracks)
     {
-        bassSources = new AudioSource[bassTracks.Length];
+        this.tracks = tracks;
+        this.mapper = gameObject.AddComponent<BeatMapper>();
+        // FIXME do this based on tower progression
+        mapper.ChangeBeatMap(tracks[0].BeatMap);
 
-        for (var i = 0; i < bassTracks.Length; i++)
-        {
-            var track = bassTracks[i];
-            var source = gameObject.AddComponent<AudioSource>();
-            source.clip = track.Track;
-            source.loop = true;
-            bassSources[i] = source;
-            if (i == 0)
-            {
-                source.volume = 1;
-            }
-            else
-            {
-                source.volume = 0;
-            }
-            source.Play();
-        }
-    }
-
-    private void Start()
-    {
-        bassTrackManager.ChangeBeatMap(bassTracks[currentTrackIndex].BeatMap);
+        InitialiseTracks();
     }
 
     public void CrossFadeToTrackLevel(int level)
     {
-        if (level > bassTracks.Length)
+        if (level > tracks.Length)
         {
             Debug.Log(string.Format("No track level for %s", level));
             return;
@@ -51,13 +33,34 @@ public class TrackPlayer : MonoBehaviour
         var newTrackIndex = level - 1;
         StartCoroutine(CrossFadeTracks(currentTrackIndex, newTrackIndex));
         currentTrackIndex = newTrackIndex;
-        bassTrackManager.ChangeBeatMap(bassTracks[currentTrackIndex].BeatMap);
+        mapper.ChangeBeatMap(tracks[currentTrackIndex].BeatMap);
+    }
+
+    private void InitialiseTracks()
+    {
+        sources = new AudioSource[tracks.Length];
+
+        for (var i = 0; i < tracks.Length; i++)
+        {
+            var track = tracks[i];
+            var source = gameObject.AddComponent<AudioSource>();
+            source.clip = track.Track;
+            source.loop = true;
+            sources[i] = source;
+            source.volume = 0;
+            // FIXME: Do this based on tower progression
+            if (i == 0)
+            {
+                source.volume = 1;
+            }
+            source.Play();
+        }
     }
 
     private IEnumerator CrossFadeTracks(int outIndex, int inIndex)
     {
-        var outSource = bassSources[outIndex];
-        var inSource = bassSources[inIndex];
+        var outSource = sources[outIndex];
+        var inSource = sources[inIndex];
         var originVolume = outSource.volume;
         for (var i = 0f; i < 1; i += (Time.deltaTime / 0.1f))
         {

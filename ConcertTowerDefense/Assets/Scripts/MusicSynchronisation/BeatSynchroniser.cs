@@ -25,12 +25,12 @@ public class BeatSynchroniser : Singleton<BeatSynchroniser>
     /// </summary>
     [SerializeField]
     private int beatsPerLoop;
+    private float secondsPerBeat;
     private int numCompletedLoops;
-    private float loopProgressBeats;
     private float audioStartTime;
+    private float loopProgressBeats;
     private float totalProgress;
     private float totalProgressBeats;
-    private float secondsPerBeat;
     private bool completedLoopThisUpdate = false;
 
     protected override BeatSynchroniser Init()
@@ -38,6 +38,17 @@ public class BeatSynchroniser : Singleton<BeatSynchroniser>
         secondsPerBeat = 60f / bpm;
         audioStartTime = (float)AudioSettings.dspTime;
         return this;
+    }
+
+    //FIXME: I really shouldn't need to be restarted. Instead, I shouldn't start until there are towers that care about the beat
+    /// <summary>
+    /// Restarts the beat synchronisation
+    /// </summary>
+    public void Restart()
+    {
+        audioStartTime = (float)AudioSettings.dspTime;
+        completedLoopThisUpdate = false;
+        numCompletedLoops = 0;
     }
 
     // Update is called once per frame

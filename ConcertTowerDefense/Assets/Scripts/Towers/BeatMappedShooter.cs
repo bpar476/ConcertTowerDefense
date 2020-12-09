@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class BasicShoot : MonoBehaviour
+public class BeatMappedShooter : MonoBehaviour
 {
     [SerializeField]
-    private BeatMapper manager;
+    private BeatMapper mapper;
 
     [SerializeField]
     private GameObject projectilePrefab;
@@ -13,24 +13,24 @@ public class BasicShoot : MonoBehaviour
 
     private void Start()
     {
-        if (manager != null)
+        if (mapper != null)
         {
-            RegisterOnBeatCallback(manager);
+            RegisterOnBeatCallback(mapper);
         }
     }
 
     private void OnDestroy()
     {
-        if (manager != null)
+        if (mapper != null)
         {
-            manager.OnBeat -= Shoot;
+            mapper.OnBeat -= Shoot;
         }
     }
 
-    public void RegisterOnBeatCallback(BeatMapper manager)
+    public void RegisterOnBeatCallback(BeatMapper mapper)
     {
-        this.manager = manager;
-        manager.OnBeat += Shoot;
+        this.mapper = mapper;
+        this.mapper.OnBeat += Shoot;
     }
 
     public void Shoot()

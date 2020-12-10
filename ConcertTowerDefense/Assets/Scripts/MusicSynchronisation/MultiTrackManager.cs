@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -13,16 +14,16 @@ public class MultiTrackManager : MonoBehaviour
     [SerializeField]
     private List<InstrumentArchetype> archetypes;
 
+    [SerializeField]
+    private TowerProgression towerProgression;
+
     private Dictionary<InstrumentType, TrackPlayer> players;
 
     private void Awake()
     {
         players = new Dictionary<InstrumentType, TrackPlayer>();
-    }
-
-    private void Start()
-    {
         placer.OnTowerPlaced += LoadInstrumentBeatmapper;
+        towerProgression.OnTowerLevelUp += LevelUpTower;
     }
 
     private void LoadInstrumentBeatmapper(InstrumentType type, BeatMappedShooter shooter)
@@ -36,14 +37,26 @@ public class MultiTrackManager : MonoBehaviour
             }
 
             var player = gameObject.AddComponent<TrackPlayer>();
-            player.LoadTracks(archetype.trackLevels.ToArray());
+            player.LoadTracks(archetype.trackLevels.ToArray(), towerProgression.GetLevelForInstrument(type));
             players[type] = player;
         }
         shooter.RegisterOnBeatCallback(players[type].Mapper);
     }
 
+    private void LevelUpTower(InstrumentType type, int level)
+    {
+        StartCoroutine(LevelUpTowerInNextFrame(type, level));
+    }
+
+    private IEnumerator LevelUpTowerInNextFrame(InstrumentType type, int level)
+    {
+        yield return new WaitForFixedUpdate();
+        players[type].CrossFadeToTrackLevel(level);
+    }
+
     private void OnDestroy()
     {
         placer.OnTowerPlaced -= LoadInstrumentBeatmapper;
+        towerProgression.OnTowerLevelUp -= LevelUpTower;
     }
 }

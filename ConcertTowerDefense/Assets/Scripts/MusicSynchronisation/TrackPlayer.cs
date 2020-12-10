@@ -5,6 +5,8 @@ public class TrackPlayer : MonoBehaviour
 {
     public BeatMapper Mapper { get { return mapper; } }
 
+    private int currentLevel;
+
     private MusicTrack[] tracks;
 
     private BeatMapper mapper;
@@ -12,12 +14,12 @@ public class TrackPlayer : MonoBehaviour
     private AudioSource[] sources;
     private int currentTrackIndex = 0;
 
-    public void LoadTracks(MusicTrack[] tracks)
+    public void LoadTracks(MusicTrack[] tracks, int currentLevel)
     {
+        this.currentLevel = currentLevel;
         this.tracks = tracks;
         this.mapper = gameObject.AddComponent<BeatMapper>();
-        // FIXME do this based on tower progression
-        mapper.ChangeBeatMap(tracks[0].BeatMap);
+        mapper.ChangeBeatMap(tracks[currentLevel - 1].BeatMap);
 
         InitialiseTracks();
     }
@@ -48,8 +50,7 @@ public class TrackPlayer : MonoBehaviour
             source.loop = true;
             sources[i] = source;
             source.volume = 0;
-            // FIXME: Do this based on tower progression
-            if (i == 0)
+            if (i == currentLevel - 1)
             {
                 source.volume = 1;
             }

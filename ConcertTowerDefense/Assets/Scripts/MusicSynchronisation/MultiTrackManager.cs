@@ -33,7 +33,7 @@ public class MultiTrackManager : MonoBehaviour
         {
             if (players.Count == 0)
             {
-                synchroniser.Restart();
+                synchroniser.Start();
             }
 
             var player = gameObject.AddComponent<TrackPlayer>();

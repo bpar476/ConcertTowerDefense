@@ -13,6 +13,9 @@ public class TowerProgression : MonoBehaviour
     [SerializeField]
     private TowerPlacer placer;
 
+    [SerializeField]
+    private NotificationSystem notificationSystem;
+
     private Dictionary<InstrumentType, int> towerCounts;
 
     private Dictionary<InstrumentType, int> towerLevels;
@@ -59,6 +62,11 @@ public class TowerProgression : MonoBehaviour
         {
             towerLevels[type] = newTowerLevel;
             OnTowerLevelUp?.Invoke(type, newTowerLevel);
+
+            if (newTowerLevel > 1)
+            {
+                notificationSystem.PublishNotification(String.Format("{0} Up!", InstrumentTypeNameMapper.InstrumentTypeFriendlyName(type)));
+            }
         }
     }
 

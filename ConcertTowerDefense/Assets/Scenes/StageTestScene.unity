@@ -2192,6 +2192,14 @@ PrefabInstance:
       propertyPath: stage
       value: 
       objectReference: {fileID: 1724420763}
+    - target: {fileID: 7646582904121086326, guid: 74254f29894108049a0c3156ee86087a, type: 3}
+      propertyPath: notificationSystem
+      value: 
+      objectReference: {fileID: 774671630}
+    - target: {fileID: 7646582904710307419, guid: 74254f29894108049a0c3156ee86087a, type: 3}
+      propertyPath: notificationSystem
+      value: 
+      objectReference: {fileID: 774671630}
     - target: {fileID: 8146830652850182032, guid: 74254f29894108049a0c3156ee86087a, type: 3}
       propertyPath: m_Name
       value: GameSystem

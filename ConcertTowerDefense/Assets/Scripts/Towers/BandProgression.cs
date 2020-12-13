@@ -15,6 +15,9 @@ public class BandProgression : MonoBehaviour
     [SerializeField]
     private TowerPlacer placer;
 
+    [SerializeField]
+    private NotificationSystem notificationSystem;
+
     private HashSet<InstrumentType> bandComposition;
 
     private void Awake()
@@ -37,6 +40,10 @@ public class BandProgression : MonoBehaviour
         if (!bandComposition.Contains(type))
         {
             bandComposition.Add(type);
+            if (BandLevel > 1)
+            {
+                notificationSystem.PublishNotification("Band Up!");
+            }
         }
     }
 }

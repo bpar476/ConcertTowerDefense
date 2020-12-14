@@ -16,8 +16,6 @@ public class TrackPlayer : MonoBehaviour
 
     public void LoadTracks(MusicTrack[] tracks, int currentLevel, float progress)
     {
-        Debug.LogFormat("Loading track at {0}", progress);
-
         this.currentLevel = currentLevel;
         this.tracks = tracks;
         this.mapper = gameObject.AddComponent<BeatMapper>();

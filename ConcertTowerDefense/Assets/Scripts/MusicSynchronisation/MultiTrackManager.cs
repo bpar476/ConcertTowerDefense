@@ -22,12 +22,19 @@ public class MultiTrackManager : MonoBehaviour
     private void Awake()
     {
         players = new Dictionary<InstrumentType, TrackPlayer>();
-        placer.OnTowerPlaced += LoadInstrumentBeatmapper;
+        placer.OnTowerPlaced += LoadInstrumentBeatmapperAtEndOfUpdate;
         towerProgression.OnTowerLevelUp += LevelUpTower;
     }
 
-    private void LoadInstrumentBeatmapper(InstrumentType type, BeatMappedShooter shooter)
+    // We run this in a coroutine so that other listeners to the event settle before we load the track (band level, tower progression)
+    private void LoadInstrumentBeatmapperAtEndOfUpdate(InstrumentType type, BeatMappedShooter shooter)
     {
+        StartCoroutine(LoadInstrumentBeatmapper(type, shooter));
+    }
+
+    private IEnumerator LoadInstrumentBeatmapper(InstrumentType type, BeatMappedShooter shooter)
+    {
+        yield return new WaitForEndOfFrame();
         var archetype = archetypes.Where(a => a.type == type).First();
         if (!players.ContainsKey(type))
         {
@@ -56,7 +63,7 @@ public class MultiTrackManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        placer.OnTowerPlaced -= LoadInstrumentBeatmapper;
+        placer.OnTowerPlaced -= LoadInstrumentBeatmapperAtEndOfUpdate;
         towerProgression.OnTowerLevelUp -= LevelUpTower;
     }
 }

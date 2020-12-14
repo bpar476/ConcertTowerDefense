@@ -40,11 +40,11 @@ public class MultiTrackManager : MonoBehaviour
         {
             if (players.Count == 0)
             {
-                synchroniser.Start();
+                synchroniser.StartSynchronisation();
             }
 
             var player = gameObject.AddComponent<TrackPlayer>();
-            player.LoadTracks(archetype.trackLevels.ToArray(), towerProgression.GetLevelForInstrument(type));
+            player.LoadTracks(archetype.trackLevels.ToArray(), towerProgression.GetLevelForInstrument(type), synchroniser.LoopProgress);
             players[type] = player;
         }
         shooter.RegisterOnBeatCallback(players[type].Mapper);

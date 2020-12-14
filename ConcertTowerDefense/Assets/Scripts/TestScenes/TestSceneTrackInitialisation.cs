@@ -15,7 +15,7 @@ public class TestSceneTrackInitialisation : MonoBehaviour
 
     private void Start()
     {
-        player.LoadTracks(tracks, 1);
+        player.LoadTracks(tracks, 1, 0);
         tower.RegisterOnBeatCallback(player.Mapper);
     }
 }

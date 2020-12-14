@@ -14,14 +14,16 @@ public class TrackPlayer : MonoBehaviour
     private AudioSource[] sources;
     private int currentTrackIndex = 0;
 
-    public void LoadTracks(MusicTrack[] tracks, int currentLevel)
+    public void LoadTracks(MusicTrack[] tracks, int currentLevel, float progress)
     {
+        Debug.LogFormat("Loading track at {0}", progress);
+
         this.currentLevel = currentLevel;
         this.tracks = tracks;
         this.mapper = gameObject.AddComponent<BeatMapper>();
         mapper.ChangeBeatMap(tracks[currentLevel - 1].BeatMap);
 
-        InitialiseTracks();
+        InitialiseTracks(progress);
     }
 
     public void CrossFadeToTrackLevel(int level)
@@ -38,7 +40,7 @@ public class TrackPlayer : MonoBehaviour
         mapper.ChangeBeatMap(tracks[currentTrackIndex].BeatMap);
     }
 
-    private void InitialiseTracks()
+    private void InitialiseTracks(float progress)
     {
         sources = new AudioSource[tracks.Length];
 
@@ -50,6 +52,7 @@ public class TrackPlayer : MonoBehaviour
             source.loop = true;
             sources[i] = source;
             source.volume = 0;
+            source.time = progress;
             if (i == currentLevel - 1)
             {
                 source.volume = 1;

@@ -14,6 +14,17 @@ public class BeatSynchroniser : Singleton<BeatSynchroniser>
     public bool CompletedLoop { get { return completedLoopThisUpdate; } }
 
     /// <summary>
+    /// The progress through the loop in seconds
+    /// </summary>
+    public float LoopProgress
+    {
+        get
+        {
+            return loopProgressBeats * secondsPerBeat;
+        }
+    }
+
+    /// <summary>
     /// Beats per minute
     /// </summary>
     [SerializeField]
@@ -44,7 +55,7 @@ public class BeatSynchroniser : Singleton<BeatSynchroniser>
     /// <summary>
     /// Starts the beat synchronisation
     /// </summary>
-    public void Start()
+    public void StartSynchronisation()
     {
         started = true;
         audioStartTime = (float)AudioSettings.dspTime;

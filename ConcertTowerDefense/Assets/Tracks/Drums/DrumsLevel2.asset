@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd20613e5696bf847bc661220387b8b3, type: 3}
+  m_Name: DrumsLevel2
+  m_EditorClassIdentifier: 
+  track: {fileID: 8300000, guid: 069dc7e23d377244299c8c504e4e7cfa, type: 3}
+  beatMap:
+  - 1
+  - 2
+  - 3.5
+  - 4
+  - 4.5
+  - 5
+  - 5.5
+  - 6
+  - 7.5
+  - 8
+  - 9
+  - 10
+  - 11.5
+  - 12
+  - 12.5
+  - 13
+  - 13.5
+  - 14
+  - 15.5
+  - 16

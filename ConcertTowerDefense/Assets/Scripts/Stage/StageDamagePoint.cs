@@ -26,6 +26,8 @@ public class StageDamagePoint : MonoBehaviour
 
     private Color originalColor;
 
+    private bool beingDamaged;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -41,11 +43,13 @@ public class StageDamagePoint : MonoBehaviour
 
     private void PlayDamageEffect()
     {
-        StartCoroutine(Flash());
+        if (!beingDamaged)
+            StartCoroutine(Flash());
     }
 
     private IEnumerator Flash()
     {
+        beingDamaged = true;
         spriteRenderer.color = Color.white;
         Vector2 originalPos = transform.position;
 
@@ -58,5 +62,6 @@ public class StageDamagePoint : MonoBehaviour
         transform.position = originalPos;
 
         spriteRenderer.color = originalColor;
+        beingDamaged = false;
     }
 }

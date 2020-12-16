@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 241479160}
   - component: {fileID: 241479161}
   - component: {fileID: 241479162}
+  - component: {fileID: 241479163}
   m_Layer: 0
   m_Name: Lane5Health
   m_TagString: Untagged
@@ -582,6 +583,32 @@ MonoBehaviour:
   stage: {fileID: 2068082695}
   flashFrames: 20
   tumbleRadius: 0.1
+--- !u!61 &241479163
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241479159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!1 &276876740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1293,7 @@ GameObject:
   - component: {fileID: 723995455}
   - component: {fileID: 723995456}
   - component: {fileID: 723995457}
+  - component: {fileID: 723995458}
   m_Layer: 0
   m_Name: Lane1Health
   m_TagString: Untagged
@@ -1353,6 +1381,32 @@ MonoBehaviour:
   stage: {fileID: 2068082695}
   flashFrames: 20
   tumbleRadius: 0.1
+--- !u!61 &723995458
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723995454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!114 &774671630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1068438856288271933, guid: e5c56f6780e97ec4fa39343ded96f939, type: 3}
@@ -1899,6 +1953,7 @@ GameObject:
   - component: {fileID: 1203586932}
   - component: {fileID: 1203586933}
   - component: {fileID: 1203586934}
+  - component: {fileID: 1203586935}
   m_Layer: 0
   m_Name: Lane2Health
   m_TagString: Untagged
@@ -1986,6 +2041,32 @@ MonoBehaviour:
   stage: {fileID: 2068082695}
   flashFrames: 20
   tumbleRadius: 0.1
+--- !u!61 &1203586935
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203586931}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!1 &1235607782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,6 +2411,7 @@ GameObject:
   - component: {fileID: 1782204151}
   - component: {fileID: 1782204152}
   - component: {fileID: 1782204153}
+  - component: {fileID: 1782204154}
   m_Layer: 0
   m_Name: Lane4Health
   m_TagString: Untagged
@@ -2417,6 +2499,32 @@ MonoBehaviour:
   stage: {fileID: 2068082695}
   flashFrames: 20
   tumbleRadius: 0.1
+--- !u!61 &1782204154
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782204150}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!224 &1805820867 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1068438857286373616, guid: e5c56f6780e97ec4fa39343ded96f939, type: 3}
@@ -2433,6 +2541,7 @@ GameObject:
   - component: {fileID: 1816238542}
   - component: {fileID: 1816238543}
   - component: {fileID: 1816238544}
+  - component: {fileID: 1816238545}
   m_Layer: 0
   m_Name: Lane3Health
   m_TagString: Untagged
@@ -2520,6 +2629,32 @@ MonoBehaviour:
   stage: {fileID: 2068082695}
   flashFrames: 20
   tumbleRadius: 0.1
+--- !u!61 &1816238545
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816238541}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15}
+  m_EdgeRadius: 0
 --- !u!1 &1871673816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,7 +2719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871673816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
+  m_LocalPosition: {x: 9.43, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3356,6 +3491,14 @@ PrefabInstance:
     - target: {fileID: 7536519458092811674, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
+      propertyPath: spawnTimings.Array.data[1]
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
+      propertyPath: spawnTimings.Array.data[2]
+      value: 5.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}

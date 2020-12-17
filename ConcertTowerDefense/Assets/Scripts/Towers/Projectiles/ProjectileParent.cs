@@ -10,7 +10,7 @@ public abstract class ProjectileParent : MonoBehaviour
         {
             Hit(other.gameObject);
 
-            GameObject.Destroy(this);
+            GameObject.Destroy(this.gameObject);
         }
     }
 

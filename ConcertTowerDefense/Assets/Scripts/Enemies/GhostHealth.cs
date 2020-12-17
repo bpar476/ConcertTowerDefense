@@ -2,6 +2,13 @@
 
 public class GhostHealth : MonoBehaviour
 {
+
+    /// <summary>
+    /// The amount of currency the player gets when this ghost is destroyed
+    /// </summary>
+    [SerializeField]
+    private int bounty = 2;
+
     public float StartingHealth;
 
     private float currentHealth;
@@ -27,6 +34,7 @@ public class GhostHealth : MonoBehaviour
 
     private void Die()
     {
+        TowerCurrency.Instance.AddCurrency(bounty);
         Destroy(this.gameObject);
     }
 

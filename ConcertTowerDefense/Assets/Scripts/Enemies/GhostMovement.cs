@@ -8,8 +8,33 @@ public class GhostMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 1;
 
+    private float currentSlow;
+
+    private float slowDuration;
+
+    private float slowStartTime;
+
+    /// <summary>
+    /// Slows the ghost. Repeated calls to Slow do not stack however they do refresh the slow.
+    /// </summary>
+    /// <param name="fraction">Amount to reduce the move speed by</param>
+    /// <param name="duration">Duration the slow lasts before it is removed automatically</param>
+    public void Slow(float fraction, float duration)
+    {
+        currentSlow = Mathf.Max(fraction, currentSlow);
+        slowDuration = Mathf.Max(duration, slowDuration);
+
+        slowStartTime = Time.time;
+    }
+
     private void Update()
     {
-        transform.position -= new Vector3(moveSpeed * Time.deltaTime, 0, 0);
+        if (Time.time - slowStartTime > slowDuration)
+        {
+            currentSlow = 0;
+        }
+
+        var speed = moveSpeed * (1 - currentSlow);
+        transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
     }
 }

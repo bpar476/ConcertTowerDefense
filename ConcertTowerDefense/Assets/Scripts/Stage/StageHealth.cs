@@ -6,10 +6,14 @@ public class StageHealth : MonoBehaviour
     public float Strength { get; private set; }
 
     [SerializeField]
+    private GameOverScreen gameOver;
+
+    [SerializeField]
     private TMPro.TMP_Text textUi;
 
     [SerializeField]
     private AudioClip[] damageSounds;
+
 
     private AudioSource audioSource;
 
@@ -47,7 +51,8 @@ public class StageHealth : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Stage was destroyed");
+        gameOver.gameObject.SetActive(true);
+        gameOver.FadeIn();
     }
 }
 

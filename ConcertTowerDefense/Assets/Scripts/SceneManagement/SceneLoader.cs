@@ -12,4 +12,9 @@ public class SceneLoader : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+    }
 }

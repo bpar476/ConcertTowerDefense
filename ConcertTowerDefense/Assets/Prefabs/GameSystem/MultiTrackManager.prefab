@@ -47,4 +47,6 @@ MonoBehaviour:
   synchroniser: {fileID: 0}
   archetypes:
   - {fileID: 11400000, guid: 1cc50f2726c065345b52e6baa27d54c8, type: 2}
+  - {fileID: 11400000, guid: 1cc50f2726c065345b52e6baa27d54c8, type: 2}
+  - {fileID: 11400000, guid: 883cd27fb3132434e9549a50b63676d5, type: 2}
   towerProgression: {fileID: 0}

@@ -45,10 +45,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 254111968239088527}
     m_Modifications:
     - target: {fileID: 7250269794092521520, guid: cd5e12f5c92af8649873c3821a6d4ac8, type: 3}
-      propertyPath: archetypes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7250269794092521520, guid: cd5e12f5c92af8649873c3821a6d4ac8, type: 3}
       propertyPath: placer
       value: 
       objectReference: {fileID: 7646582903486075693}

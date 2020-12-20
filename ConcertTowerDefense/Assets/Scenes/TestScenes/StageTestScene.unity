@@ -2189,6 +2189,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1261430181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 642561378348925557, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+  m_PrefabInstance: {fileID: 642561378626999131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583732134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,31 +3290,30 @@ PrefabInstance:
       propertyPath: m_Text
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6976771026476799011, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1966787503}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
---- !u!1 &642561378626999133 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642561377868285098, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-  m_PrefabInstance: {fileID: 642561378626999131}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &642561378626999134 stripped
+--- !u!114 &642561378626999133 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 642561378160474420, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+  m_CorrespondingSourceObject: {fileID: 642561378348925547, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
   m_PrefabInstance: {fileID: 642561378626999131}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1261430181}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &642561378626999135
+--- !u!114 &642561378626999134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642561378626999133}
+  m_GameObject: {fileID: 1261430181}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -3324,10 +3328,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3342,7 +3346,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 642561378626999134}
+  m_TargetGraphic: {fileID: 642561378626999133}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -3351,7 +3355,7 @@ MonoBehaviour:
         m_MethodName: GrabTower
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a4d700ba4c5050c4fa70fa6e4281e93f, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 883cd27fb3132434e9549a50b63676d5, type: 2}
           m_ObjectArgumentAssemblyTypeName: InstrumentArchetype, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -3748,6 +3752,14 @@ PrefabInstance:
       propertyPath: stage
       value: 
       objectReference: {fileID: 1724420763}
+    - target: {fileID: 7646582903715443765, guid: 74254f29894108049a0c3156ee86087a, type: 3}
+      propertyPath: archetypes.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646582903715443765, guid: 74254f29894108049a0c3156ee86087a, type: 3}
+      propertyPath: archetypes.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 883cd27fb3132434e9549a50b63676d5, type: 2}
     - target: {fileID: 7646582904121086326, guid: 74254f29894108049a0c3156ee86087a, type: 3}
       propertyPath: notificationSystem
       value: 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bde355d6432b2418040ec6b99526b2, type: 3}
+  m_Name: LeadGuitar
+  m_EditorClassIdentifier: 
+  type: 1
+  towerPrefab: {fileID: 2205707642148682328, guid: 57e6fbdd6e4508b45afc68e3b68af547, type: 3}
+  trackLevels:
+  - {fileID: 11400000, guid: 8c5521d50f6c1f846b7b36039a3e77e4, type: 2}
+  - {fileID: 11400000, guid: 2063fb19c8d8478469fe632442f2662a, type: 2}
+  - {fileID: 11400000, guid: 360de2cdb8278b34cb93203b5b2f5c2a, type: 2}
+  cost: 5

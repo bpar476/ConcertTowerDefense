@@ -3752,14 +3752,6 @@ PrefabInstance:
       propertyPath: stage
       value: 
       objectReference: {fileID: 1724420763}
-    - target: {fileID: 7646582903715443765, guid: 74254f29894108049a0c3156ee86087a, type: 3}
-      propertyPath: archetypes.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7646582903715443765, guid: 74254f29894108049a0c3156ee86087a, type: 3}
-      propertyPath: archetypes.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 883cd27fb3132434e9549a50b63676d5, type: 2}
     - target: {fileID: 7646582904121086326, guid: 74254f29894108049a0c3156ee86087a, type: 3}
       propertyPath: notificationSystem
       value: 

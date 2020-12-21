@@ -2,15 +2,21 @@
 
 public abstract class ProjectileParent : MonoBehaviour
 {
+    private float collisionTime;
+
     private readonly string ENEMY_TAG = "enemy";
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == ENEMY_TAG)
+        if (Time.fixedTime != collisionTime)
         {
-            Hit(other.gameObject);
+            collisionTime = Time.fixedTime;
+            if (other.tag == ENEMY_TAG)
+            {
+                Hit(other.gameObject);
 
-            GameObject.Destroy(this.gameObject);
+                GameObject.Destroy(this.gameObject);
+            }
         }
     }
 

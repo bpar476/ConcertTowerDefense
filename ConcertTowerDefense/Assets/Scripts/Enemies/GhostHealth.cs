@@ -23,7 +23,7 @@ public class GhostHealth : MonoBehaviour
 
     public void Damage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth -= damage * BandProgression.Instance.BandLevel;
         audioSource.Play();
 
         if (currentHealth <= 0)

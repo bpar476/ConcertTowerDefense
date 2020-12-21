@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class BandProgression : MonoBehaviour
+public class BandProgression : Singleton<BandProgression>
 {
 
     public int BandLevel
@@ -20,9 +20,15 @@ public class BandProgression : MonoBehaviour
 
     private HashSet<InstrumentType> bandComposition;
 
-    private void Awake()
+    protected override BandProgression Init()
     {
         bandComposition = new HashSet<InstrumentType>();
+        return this;
+    }
+
+    protected override bool ShouldNotDestroyOnLoad()
+    {
+        return false;
     }
 
     private void Start()

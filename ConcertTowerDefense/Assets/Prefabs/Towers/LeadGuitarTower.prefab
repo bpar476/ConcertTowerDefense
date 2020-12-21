@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeadGuitarTower
       objectReference: {fileID: 0}
+    - target: {fileID: 5432681359448508722, guid: 66a578466ee3e234ebbf4133e2026f86, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 2113782345129512986, guid: e5938f6f7aa09bf41b50d43672888e06, type: 3}
     - target: {fileID: 5432681359448508723, guid: 66a578466ee3e234ebbf4133e2026f86, type: 3}
       propertyPath: m_Sprite
       value: 

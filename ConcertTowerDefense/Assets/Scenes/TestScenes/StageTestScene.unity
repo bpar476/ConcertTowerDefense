@@ -3351,6 +3351,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1966787503}
+    - target: {fileID: 642561378545208145, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: a6e220253a2546e49b631a6e31af469d, type: 3}
+    - target: {fileID: 642561378545208146, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5672210003472187308, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
       propertyPath: m_Text
       value: 10

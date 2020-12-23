@@ -22,8 +22,9 @@ public class TowerAnimation : MonoBehaviour
     {
         synchroniser = BeatSynchroniser.Instance;
         animator = GetComponent<Animator>();
-        towerPlacer = TowerPlacer.Instance;
-        towerPlacer.OnTowerPlaced += StartRockingIfIAmPlaced;
+        // The rocking animation is a bit much, just do the squishing animation
+        // towerPlacer = TowerPlacer.Instance;
+        // towerPlacer.OnTowerPlaced += StartRockingIfIAmPlaced;
     }
 
     private void StartRockingIfIAmPlaced(InstrumentType type, BeatMappedShooter shooter)

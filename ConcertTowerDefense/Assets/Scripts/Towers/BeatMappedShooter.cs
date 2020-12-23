@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(TowerAnimation))]
 public class BeatMappedShooter : MonoBehaviour
 {
     [SerializeField]
@@ -11,8 +12,12 @@ public class BeatMappedShooter : MonoBehaviour
     [SerializeField]
     private float projectileSpeed = 5f;
 
+    private TowerAnimation animator;
+
     private void Start()
     {
+        animator = GetComponent<TowerAnimation>();
+
         if (mapper != null)
         {
             RegisterOnBeatCallback(mapper);
@@ -37,5 +42,6 @@ public class BeatMappedShooter : MonoBehaviour
     {
         var projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(projectileSpeed, 0);
+        animator.ShootAnimation();
     }
 }

@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class TowerAnimation : MonoBehaviour
 {
     private static readonly string ANIM_TRIGGER_START_BEATING = "startBeating";
+    private static readonly string ANIM_TRIGGER_SHOOT = "shoot";
 
     [SerializeField]
     private TowerPlacer towerPlacer;
 
     private Animator animator;
     private BeatSynchroniser synchroniser;
+
+    public void ShootAnimation()
+    {
+        animator.SetTrigger(ANIM_TRIGGER_SHOOT);
+    }
 
     private void OnEnable()
     {

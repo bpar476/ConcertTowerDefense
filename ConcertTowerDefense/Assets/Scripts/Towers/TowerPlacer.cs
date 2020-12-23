@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class TowerPlacer : MonoBehaviour
+public class TowerPlacer : Singleton<TowerPlacer>
 {
 
     /// <summary>
@@ -38,10 +38,17 @@ public class TowerPlacer : MonoBehaviour
     private bool hoveringValidCell = false;
     private StageCell currentCell;
 
-    private void Awake()
+    protected override TowerPlacer Init()
     {
         mainCam = Camera.main;
         state = Mode.EMPTY;
+
+        return this;
+    }
+
+    protected override bool ShouldNotDestroyOnLoad()
+    {
+        return false;
     }
 
     private void Update()

@@ -10,12 +10,11 @@ public class TowerProgression : MonoBehaviour
     /// </summary>
     public Action<InstrumentType, int> OnTowerLevelUp;
 
-    [SerializeField]
-    private TowerPlacer placer;
 
     [SerializeField]
     private NotificationSystem notificationSystem;
 
+    private TowerPlacer placer;
     private Dictionary<InstrumentType, int> towerCounts;
 
     private Dictionary<InstrumentType, int> towerLevels;
@@ -31,9 +30,14 @@ public class TowerProgression : MonoBehaviour
 
     private void Awake()
     {
-        placer.OnTowerPlaced += HandleTowerPlaced;
         towerCounts = new Dictionary<InstrumentType, int>();
         towerLevels = new Dictionary<InstrumentType, int>();
+    }
+
+    private void Start()
+    {
+        placer = TowerPlacer.Instance;
+        placer.OnTowerPlaced += HandleTowerPlaced;
     }
 
     private void HandleTowerPlaced(InstrumentType type, BeatMappedShooter ignored)

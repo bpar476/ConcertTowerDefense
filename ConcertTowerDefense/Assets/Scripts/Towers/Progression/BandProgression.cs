@@ -12,13 +12,12 @@ public class BandProgression : Singleton<BandProgression>
         }
     }
 
-    [SerializeField]
-    private TowerPlacer placer;
 
     [SerializeField]
     private NotificationSystem notificationSystem;
 
     private HashSet<InstrumentType> bandComposition;
+    private TowerPlacer placer;
 
     protected override BandProgression Init()
     {
@@ -33,6 +32,7 @@ public class BandProgression : Singleton<BandProgression>
 
     private void Start()
     {
+        placer = TowerPlacer.Instance;
         placer.OnTowerPlaced += UpdateBandLevel;
     }
 

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MultiTrackManager : MonoBehaviour
 {
-    [SerializeField]
-    private TowerPlacer placer;
 
     [SerializeField]
     private BeatSynchroniser synchroniser;
@@ -16,14 +14,20 @@ public class MultiTrackManager : MonoBehaviour
 
     [SerializeField]
     private TowerProgression towerProgression;
+    private TowerPlacer placer;
 
     private Dictionary<InstrumentType, TrackPlayer> players;
 
     private void Awake()
     {
         players = new Dictionary<InstrumentType, TrackPlayer>();
-        placer.OnTowerPlaced += LoadInstrumentBeatmapperAtEndOfUpdate;
         towerProgression.OnTowerLevelUp += LevelUpTower;
+    }
+
+    private void Start()
+    {
+        placer = TowerPlacer.Instance;
+        placer.OnTowerPlaced += LoadInstrumentBeatmapperAtEndOfUpdate;
     }
 
     // We run this in a coroutine so that other listeners to the event settle before we load the track (band level, tower progression)

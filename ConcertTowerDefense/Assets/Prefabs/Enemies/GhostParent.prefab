@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 233452958599011442}
   - component: {fileID: 3799751454572886428}
   - component: {fileID: 2942689320424527588}
+  - component: {fileID: 3962002461948389638}
   - component: {fileID: 6520853158598825616}
   - component: {fileID: 7317920123044560919}
   - component: {fileID: 7810601373847812702}
@@ -99,6 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounty: 2
   StartingHealth: 20
+--- !u!114 &3962002461948389638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555840832943746656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c53057ff5c65ed4488844b2225713a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &6520853158598825616
 AudioSource:
   m_ObjectHideFlags: 0

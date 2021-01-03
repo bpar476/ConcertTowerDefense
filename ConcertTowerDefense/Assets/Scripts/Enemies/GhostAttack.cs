@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(GhostMovement))]
+[RequireComponent(typeof(GhostMovement), typeof(GhostAnimation))]
 public class GhostAttack : MonoBehaviour
 {
     /// <summary>
@@ -16,6 +16,7 @@ public class GhostAttack : MonoBehaviour
     private float damage;
 
     private GhostMovement movement;
+    private new GhostAnimation animation;
 
     private bool isAttacking = false;
     private StageDamagePoint currentDamagePoint;
@@ -25,6 +26,7 @@ public class GhostAttack : MonoBehaviour
     private void Awake()
     {
         movement = GetComponent<GhostMovement>();
+        animation = GetComponent<GhostAnimation>();
         secondsPerAttack = 1 / attackSpeed;
     }
 
@@ -39,6 +41,7 @@ public class GhostAttack : MonoBehaviour
                 currentDamagePoint = damagePoint;
                 lastAttackTime = Time.time - secondsPerAttack;
                 movement.enabled = false;
+                animation.StartAttacking();
             }
         }
     }

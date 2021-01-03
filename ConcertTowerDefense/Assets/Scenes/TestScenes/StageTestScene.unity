@@ -1134,7 +1134,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 642561378160474422, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
   m_PrefabInstance: {fileID: 642561378626999131}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &439672698
+--- !u!114 &439672702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 642561377868285098, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
   m_PrefabInstance: {fileID: 642561378626999131}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &672165358
+--- !u!114 &672165362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2339,7 +2339,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 642561378348925557, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
   m_PrefabInstance: {fileID: 642561378626999131}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1261430182
+--- !u!114 &1261430184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2649,7 +2649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
       propertyPath: spawnTimings.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
       propertyPath: spawnTimings.Array.data[1]
@@ -2662,6 +2662,14 @@ PrefabInstance:
     - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
       propertyPath: spawnTimings.Array.data[3]
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
+      propertyPath: spawnTimings.Array.data[4]
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536519458092811675, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}
+      propertyPath: spawnTimings.Array.data[5]
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71716f35226bfd34a80f85eda1ce86f0, type: 3}

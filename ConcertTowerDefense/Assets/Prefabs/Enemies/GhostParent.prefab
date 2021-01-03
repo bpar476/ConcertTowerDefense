@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22db27cff7b99340998ca0242330560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounty: 2
+  bounty: 3
   StartingHealth: 20
 --- !u!114 &3962002461948389638
 MonoBehaviour:

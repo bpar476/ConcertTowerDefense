@@ -23,7 +23,7 @@ public class GhostHealth : MonoBehaviour
 
     public void Damage(float damage)
     {
-        currentHealth -= damage * BandProgression.Instance.BandLevel;
+        currentHealth -= damage * damageMultiplierForBandLevel(BandProgression.Instance.BandLevel);
         audioSource.Play();
 
         if (currentHealth <= 0)
@@ -36,6 +36,19 @@ public class GhostHealth : MonoBehaviour
     {
         TowerCurrency.Instance.AddCurrency(bounty);
         Destroy(this.gameObject);
+    }
+
+    private static float damageMultiplierForBandLevel(int bandLevel)
+    {
+        switch (bandLevel)
+        {
+            case 2:
+                return 1.5f;
+            case 3:
+                return 2f;
+            default:
+                return 1f;
+        }
     }
 
 }

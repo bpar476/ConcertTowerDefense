@@ -28,7 +28,7 @@ public class GhostHealth : MonoBehaviour
 
     public void Damage(float damage)
     {
-        currentHealth -= damage * damageMultiplierForBandLevel(BandProgression.Instance.BandLevel);
+        currentHealth -= damage * DamageMultiplierForBandLevel(BandProgression.Instance.BandLevel);
         audioSource.Play();
         material.SetFloat(MATERIAL_PARAM_FLASH, 1.0f);
 
@@ -46,7 +46,7 @@ public class GhostHealth : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private static float damageMultiplierForBandLevel(int bandLevel)
+    public static float DamageMultiplierForBandLevel(int bandLevel)
     {
         switch (bandLevel)
         {

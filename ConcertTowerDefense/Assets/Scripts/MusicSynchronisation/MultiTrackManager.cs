@@ -12,7 +12,6 @@ public class MultiTrackManager : MonoBehaviour
     [SerializeField]
     private List<InstrumentArchetype> archetypes;
 
-    [SerializeField]
     private TowerProgression towerProgression;
     private TowerPlacer placer;
 
@@ -21,13 +20,14 @@ public class MultiTrackManager : MonoBehaviour
     private void Awake()
     {
         players = new Dictionary<InstrumentType, TrackPlayer>();
-        towerProgression.OnTowerLevelUp += LevelUpTower;
     }
 
     private void Start()
     {
         placer = TowerPlacer.Instance;
         placer.OnTowerPlaced += LoadInstrumentBeatmapperAtEndOfUpdate;
+        towerProgression = TowerProgression.Instance;
+        towerProgression.OnTowerLevelUp += LevelUpTower;
     }
 
     // We run this in a coroutine so that other listeners to the event settle before we load the track (band level, tower progression)

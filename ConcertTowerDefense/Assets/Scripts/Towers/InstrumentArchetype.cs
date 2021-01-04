@@ -24,4 +24,9 @@ public class InstrumentArchetype : ScriptableObject
     /// </summary>
     [TextArea]
     public string description;
+
+    /// <summary>
+    /// A human readable name for the instrument which can be shown in the UI
+    /// </summary>
+    public string friendlyName;
 }

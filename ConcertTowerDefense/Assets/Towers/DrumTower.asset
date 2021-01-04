@@ -21,3 +21,4 @@ MonoBehaviour:
   cost: 10
   description: The Drum Kit is a moderate damage unit which damages all ghosts in
     an area where it hits.
+  friendlyName: Drums

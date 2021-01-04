@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerProgression : MonoBehaviour
+public class TowerProgression : Singleton<TowerProgression>
 {
     /// <summary>
     /// Callback function invoked when a tower type levels up. Arguments
@@ -19,6 +19,18 @@ public class TowerProgression : MonoBehaviour
 
     private Dictionary<InstrumentType, int> towerLevels;
 
+    protected override TowerProgression Init()
+    {
+        towerCounts = new Dictionary<InstrumentType, int>();
+        towerLevels = new Dictionary<InstrumentType, int>();
+        return this;
+    }
+
+    protected override bool ShouldNotDestroyOnLoad()
+    {
+        return false;
+    }
+
     public int GetLevelForInstrument(InstrumentType type)
     {
         if (towerLevels.ContainsKey(type))
@@ -26,12 +38,6 @@ public class TowerProgression : MonoBehaviour
             return towerLevels[type];
         }
         return 0;
-    }
-
-    private void Awake()
-    {
-        towerCounts = new Dictionary<InstrumentType, int>();
-        towerLevels = new Dictionary<InstrumentType, int>();
     }
 
     private void Start()

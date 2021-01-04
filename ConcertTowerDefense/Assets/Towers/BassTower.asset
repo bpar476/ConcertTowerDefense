@@ -19,3 +19,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2049f998fea45045bf5c885d275b352, type: 2}
   - {fileID: 11400000, guid: 80a77f672a7e68b499f018bf3ad674a5, type: 2}
   cost: 5
+  description: The Bass Guitar is a low damage unit which slows the ghosts when they
+    are hit by it.

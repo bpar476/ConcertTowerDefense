@@ -1149,24 +1149,6 @@ Transform:
   m_Father: {fileID: 1724420762}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &439672697 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642561378160474422, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-  m_PrefabInstance: {fileID: 642561378626999131}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &439672702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439672697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5050bd2e7272d7742b46669c12ac3618, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  archetype: {fileID: 11400000, guid: 1cc50f2726c065345b52e6baa27d54c8, type: 2}
 --- !u!1 &606515214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,24 +1329,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615586320}
   m_CullTransparentMesh: 0
---- !u!1 &672165357 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 642561377868285098, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-  m_PrefabInstance: {fileID: 642561378626999131}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &672165362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672165357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5050bd2e7272d7742b46669c12ac3618, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  archetype: {fileID: 11400000, guid: 883cd27fb3132434e9549a50b63676d5, type: 2}
 --- !u!1 &716605267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,22 +3653,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1235607786}
     m_Modifications:
-    - target: {fileID: 642561377766091111, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 642561377766091111, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 642561377766091111, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 642561377766091111, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 642561377798385632, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3813,14 +3761,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrumTowerPicker
       objectReference: {fileID: 0}
-    - target: {fileID: 642561378545208145, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 294e2c93fe993bb4880aa9a476868a24, type: 3}
-    - target: {fileID: 642561378545208146, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5672210003472187308, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
       propertyPath: m_Text
       value: 10
@@ -3833,6 +3773,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1966787503}
+    - target: {fileID: 7670385757183986446, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+      propertyPath: m_Name
+      value: TooltipPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908808231101891932, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+      propertyPath: m_Name
+      value: TooltipPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125478306938926516, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
+      propertyPath: m_Name
+      value: TooltipPanel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc6488eedd8b0d04ba5b4cd70b019219, type: 3}
 --- !u!1001 &889286331181498646

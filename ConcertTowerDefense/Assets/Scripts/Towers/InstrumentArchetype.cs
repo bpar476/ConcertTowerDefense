@@ -18,4 +18,10 @@ public class InstrumentArchetype : ScriptableObject
     /// The price to place this tower
     /// </summary>
     public int cost;
+
+    /// <summary>
+    /// A description of the tower archetype which will be rendered on the tooltip
+    /// </summary>
+    [TextArea]
+    public string description;
 }

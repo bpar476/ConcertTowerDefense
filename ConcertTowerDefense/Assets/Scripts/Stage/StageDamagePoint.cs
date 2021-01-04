@@ -50,7 +50,7 @@ public class StageDamagePoint : MonoBehaviour
     private IEnumerator Flash()
     {
         beingDamaged = true;
-        spriteRenderer.color = Color.white;
+        spriteRenderer.material.SetFloat("_FlashAmount", 1.0f);
         Vector2 originalPos = transform.position;
 
         for (int i = 0; i < flashFrames; i++)
@@ -60,8 +60,7 @@ public class StageDamagePoint : MonoBehaviour
         }
 
         transform.position = originalPos;
-
-        spriteRenderer.color = originalColor;
+        spriteRenderer.material.SetFloat("_FlashAmount", 0f);
         beingDamaged = false;
     }
 }

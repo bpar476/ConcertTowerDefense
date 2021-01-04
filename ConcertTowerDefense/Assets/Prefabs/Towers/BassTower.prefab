@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapper: {fileID: 0}
   projectilePrefab: {fileID: 8500211969927185735, guid: 767b364ddf414a645abd42fe75472c2c, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 5
 --- !u!95 &3897726233241897897
 Animator:
   serializedVersion: 3

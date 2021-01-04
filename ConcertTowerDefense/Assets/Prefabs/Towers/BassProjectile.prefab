@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1836210935988185156}
   - component: {fileID: 8577601342158315796}
   - component: {fileID: -5746940647558232395}
+  - component: {fileID: -5299402443894756040}
   m_Layer: 0
   m_Name: BassProjectile
   m_TagString: Untagged
@@ -157,3 +158,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5299402443894756040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500211969927185735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7704f06eb149ee64e88dc41f0704945f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  from: {r: 0.6342174, g: 0.23137254, b: 1, a: 1}
+  to: {r: 0.9245283, g: 0.39276263, b: 0.02180491, a: 1}

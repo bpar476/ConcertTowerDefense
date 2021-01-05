@@ -4,10 +4,9 @@ public class GhostSpawner : MonoBehaviour
 {
 
     /// <summary>
-    /// Whether the spawner has spawned all of the ghosts it plans to spawn
+    /// The number of ghosts that this spawner will spawn this level
     /// </summary>
-    /// <value>True if there are no more ghosts to spawn. False otherwise</value>
-    public bool Finished { get { return nextSpawnIndex >= spawnTimings.Length; } }
+    public int GhostCount { get { return spawnTimings.Length; } }
 
     [SerializeField]
     private GameObject ghostPrefab;

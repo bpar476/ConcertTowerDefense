@@ -42,6 +42,7 @@ public class GhostHealth : MonoBehaviour
 
     private void Die()
     {
+        VictoryObserver.Instance.ReportGhostKilled();
         TowerCurrency.Instance.AddCurrency(bounty);
         Destroy(this.gameObject);
     }

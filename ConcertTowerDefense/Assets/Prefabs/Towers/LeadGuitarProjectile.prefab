@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8500211969927185734, guid: 767b364ddf414a645abd42fe75472c2c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1fa140fff6f2a1c488db14678d7df66f, type: 3}
     - target: {fileID: 8500211969927185735, guid: 767b364ddf414a645abd42fe75472c2c, type: 3}
       propertyPath: m_Name
       value: LeadGuitarProjectile

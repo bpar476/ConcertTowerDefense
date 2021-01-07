@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Singleton<T> : MonoBehaviour
+public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
 
@@ -10,15 +10,12 @@ public abstract class Singleton<T> : MonoBehaviour
     {
         if (instance != null)
         {
-            GameObject.Destroy(this.gameObject);
+            GameObject.Destroy(instance.gameObject);
         }
-        else
+        instance = Init();
+        if (ShouldNotDestroyOnLoad())
         {
-            instance = Init();
-            if (ShouldNotDestroyOnLoad())
-            {
-                DontDestroyOnLoad(this);
-            }
+            DontDestroyOnLoad(this);
         }
     }
 

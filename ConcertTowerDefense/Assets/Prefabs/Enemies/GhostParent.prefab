@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 1
-  damage: 1
+  damage: 2
 --- !u!114 &2942689320424527588
 MonoBehaviour:
   m_ObjectHideFlags: 0
